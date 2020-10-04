@@ -1,0 +1,32 @@
+@mixin flex($dir: row, $jus: center, $al: center) {
+    display: flex;
+    flex-direction: $dir;
+    justify-content: $jus;
+    align-items: $al;
+}
+
+@mixin transition {
+    transition: all 0.3s ease;
+}
+
+@mixin max-768 {
+    @media screen and (max-width: 768px) {
+        @content
+    }
+}
+
+@mixin max-992 {
+    @media screen and (max-width: 768px) {
+        @content
+    }
+}
+
+@mixin max-500 {
+    @media screen and (max-width: 768px) {
+        @content
+    }
+}
+
+$textColor: #2c2c2c;
+$boxShadow: 0px 0px 10px 0 #1e0b5e;
+$borderColor: #1e0b5e;

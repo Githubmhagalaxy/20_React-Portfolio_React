@@ -1,0 +1,250 @@
+@import "./assets/css/var";
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: sans-serif, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #faf7f7;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.header {
+    background: rgb(23,19,96);
+    background: -moz-linear-gradient(100deg, rgba(23,19,96,1) 0%, rgba(9,9,121,1) 0%, rgba(4,126,198,1) 100%, rgba(0,212,255,1) 100%);
+    background: -webkit-linear-gradient(100deg, rgba(23,19,96,1) 0%, rgba(9,9,121,1) 0%, rgba(4,126,198,1) 100%, rgba(0,212,255,1) 100%);
+    background: linear-gradient(100deg, rgba(23,19,96,1) 0%, rgba(9,9,121,1) 0%, rgba(4,126,198,1) 100%, rgba(0,212,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#171360",endColorstr="#00d4ff",GradientType=1);
+    .header-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        @include flex(row, space-between, baseline);
+        @include max-992 {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .brand-sec {
+            .logo {
+                padding: 20px 40px;
+                a {
+                    color: #ffffff;
+                }
+            }
+        }
+        .navigation {
+            nav {
+                ul {
+                    @include flex(row, space-around, center);
+                    li {
+                        padding: 5px 15px;
+                        a {
+                            color: #ffffff;
+                            font-weight: 700;
+                            @include transition;
+                            &:hover, &.active {
+                                color: #171360;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.container {
+    max-width: 1200px;
+    min-height: 75vh;
+    margin: 0 auto;
+    @include max-992 {
+        max-width: calc(100% - 32px);
+    }
+}
+
+.title {
+    padding: 20px 0;
+    margin: 0 auto;
+    text-align: center;
+    h2 {
+        text-align: center;
+        font-weight: 700;
+        font-size: 1.4em;
+        color: $textColor;
+        text-transform: uppercase;
+    }
+}
+
+.about-section {
+    .picture {
+        margin: 10px auto;
+        text-align: center;
+        svg {
+            width: 100px;
+            color: #ffffff;
+            background-color: #01133d;
+            border-radius: 100px;
+            padding: 10px;
+        }
+    }
+    .text {
+        p {
+            padding: 10px;
+            font-size: 1.2em;
+            font-weight: 500;
+            color: $textColor;
+            line-height: 30px;
+            text-align: justify;
+        }
+    }
+}
+
+.portfolio-sec {
+    .portfolios {
+        ul {
+            @include flex(row, flex-start, flex-start);
+            flex-wrap: wrap;
+            li {
+                flex: 0 0 31%;
+                margin: 20px 1%;
+                @include max-768 {
+                    flex: 0 0 90%;
+                    margin: 20px auto;
+                }
+                .column {
+                    border-radius: 10px;
+                    @include transition;
+                    border: 1px solid #1e0b5e;
+                    &:hover {
+                        box-shadow: $boxShadow;
+                    }
+                    figure {
+                        img {
+                            border-radius: 5px 5px 0 0;
+                            width: 100%;
+                        }
+                    }
+                    .text {
+                        padding: 10px;
+                        .heading {
+                            font-size: 1em;
+                            font-weight: 700;
+                            color: $textColor;
+                            text-transform: uppercase;
+                        }
+                        .content {
+                            font-size: 0.8em;
+                            font-weight: 500;
+                            color: $textColor;
+                            line-height: 18px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.contact-sec {
+    .error {
+        text-align: center;
+        margin: 10px auto 40px;
+        color: red;
+    }
+    form {
+        max-width: 80%;
+        margin: 0 auto;
+        > * {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+            padding: 10px;
+            color: $textColor;
+            border: 1px solid $borderColor;
+            border-radius: 10px;
+            background-color: #ffffff;
+            @include transition;
+            &:focus {
+                outline: none;
+            }
+        }
+        input {
+            &[type=submit] {
+                &:hover {
+                    background-color: $borderColor;
+                    color: #fff;
+                    cursor: pointer;
+                }
+            }
+        }
+        textarea {
+            min-height: 200px;
+        }
+    }
+}
+
+.resume-sec {
+    .resume-content {
+        > * {
+            text-align: justify;
+            margin-bottom: 20px;
+            color: $textColor;
+        }
+        h4 {
+            font-size: 1.2em;
+            font-weight: 700;
+        }
+        ul {
+            padding-left: 10px;
+            li {
+                margin: 10px 0;
+            }
+        }
+    }
+}
+
+.footer {
+    margin-top: 50px;
+    background: rgb(23,19,96);
+    background: -moz-linear-gradient(100deg, rgba(23,19,96,1) 0%, rgba(9,9,121,1) 0%, rgba(4,126,198,1) 100%, rgba(0,212,255,1) 100%);
+    background: -webkit-linear-gradient(100deg, rgba(23,19,96,1) 0%, rgba(9,9,121,1) 0%, rgba(4,126,198,1) 100%, rgba(0,212,255,1) 100%);
+    background: linear-gradient(100deg, rgba(23,19,96,1) 0%, rgba(9,9,121,1) 0%, rgba(4,126,198,1) 100%, rgba(0,212,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#171360",endColorstr="#00d4ff",GradientType=1);
+    .social-links {
+        ul {
+            @include flex(row, center, center);
+            li {
+                padding: 10px 20px;
+                svg {
+                    width: 30px;
+                    color: #ffffff;
+                    @include transition;
+                    &:hover {
+                        color: #171360;
+                    }
+                }
+            }
+        }
+    }
+}
