@@ -1,3 +1,21 @@
+# 20_React-Portfolio_React
+
+# Purpose:
+create a portfolio, using new React skills to help set us apart from other developers whose portfolios don’t use the latest technologies.
+
+# Description:
+Being a web developer means being part of a community. We’ll need a place to share our projects not only if We're applying for jobs or working as a freelancer but also so that we can share our work with fellow developers and collaborate on future projects. We want to create a portfolio, using our new React skills to help set us apart from other developers whose portfolios don’t use the latest technologies.
+
+# Contribution:
+Made by Mohammad H. Abbaspour
+
+# Built With:
+* React Router
+* GraphQl
+* Apollo Server
+* if-env
+* npm package
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
